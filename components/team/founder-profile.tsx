@@ -1,17 +1,29 @@
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import type { Founder } from "@/lib/team";
 
 export function FounderProfile({ founder }: { founder: Founder }) {
   return (
     <article id={founder.id} className="grid scroll-mt-24 gap-8 border-t border-line py-12 lg:grid-cols-12 lg:gap-10 lg:py-16">
       <div className="lg:col-span-4">
-        {/* Monogram stands in until a portrait file is added. */}
-        <div className="flex aspect-[4/5] max-w-xs flex-col justify-between border border-line bg-inset p-5">
-          <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-faint">{founder.role}</p>
-          <p className="font-display text-6xl font-semibold tracking-tight" aria-hidden>
-            {founder.initials}
-          </p>
-        </div>
+        {founder.photo ? (
+          <div className="relative aspect-[4/5] max-w-xs overflow-hidden border border-line">
+            <Image
+              src={founder.photo}
+              alt={founder.name}
+              fill
+              sizes="320px"
+              className="object-cover object-[center_18%]"
+            />
+          </div>
+        ) : (
+          <div className="flex aspect-[4/5] max-w-xs flex-col justify-between border border-line bg-inset p-5">
+            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-faint">{founder.role}</p>
+            <p className="font-display text-6xl font-semibold tracking-tight" aria-hidden>
+              {founder.initials}
+            </p>
+          </div>
+        )}
       </div>
       <div className="lg:col-span-7 lg:col-start-6">
         <h2 className="font-display text-4xl font-semibold tracking-tight">{founder.name}</h2>

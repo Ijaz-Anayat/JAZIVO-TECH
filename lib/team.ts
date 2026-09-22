@@ -8,6 +8,7 @@ export type Founder = {
   name: string;
   role: string;
   initials: string;
+  photo?: string;
   owns: string;
   paragraphs: string[];
   history?: { when: string; what: string }[];
@@ -21,6 +22,7 @@ export const founders: Founder[] = [
     name: "Ijaz Anayat",
     role: "Co-Founder & CTO",
     initials: "IA",
+    photo: "/team/ijaz-anayat.png",
     owns: "Development, architecture, technical decisions, and code quality.",
     paragraphs: [
       "Ijaz owns the engineering of Jazivo Tech: how a system is structured, which tradeoffs we accept, and what is allowed to merge. He is a full-stack developer across the MERN stack, Next.js, and React Native.",
@@ -50,8 +52,9 @@ export const founders: Founder[] = [
     name: "Jasim Mustafa",
     role: "Co-Founder & CEO / COO",
     initials: "JM",
+    photo: "/team/jasim-mustafa.jpg",
     owns: "Client relationships, requirements, proposals, project management — and hands-on development.",
-    // TODO: add Jasim's specific bio, photo, and links
+    // TODO: add Jasim's specific bio and links
     paragraphs: [
       "Jasim runs the client side of an engagement: the first conversation, the requirements, the proposal, and the plan that keeps delivery honest. He also builds. His core stack is the same as Ijaz’s — MERN and Next.js — so the person who scopes the work can read the repository.",
     ],
